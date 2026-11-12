@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BioCoder EDP — Pitch One-Pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0f1f2e;--ink-2:#3b4b5a;--muted:#6b7a88;--bg:#f6f8f7;--card:#fff;--line:#e3e8e6;--teal:#0e7c6b;--teal-soft:#e4f3ef;--amber:#c7781a;--amber-soft:#fbf0e1}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;font-size:16px}
+  .wrap{max-width:560px;margin:0 auto;padding:0 18px 40px}
+  header{background:linear-gradient(160deg,#0b2a3a 0%,#0e4f55 55%,#0e7c6b 100%);color:#fff;padding:34px 0 30px}
+  header .wrap{padding-bottom:0}
+  .brand{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+  h1{font-size:29px;line-height:1.15;font-weight:800;margin:10px 0 12px;letter-spacing:-.01em}
+  .lede{font-size:17px;opacity:.92}
+  .cta-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;border-radius:10px;font-weight:600;font-size:15px;text-decoration:none;min-height:46px}
+  .btn-primary{background:#fff;color:#0b2a3a}
+  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35)}
+  section{margin-top:26px}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:500;margin-bottom:8px}
+  h2{font-size:21px;line-height:1.25;font-weight:700;margin-bottom:10px}
+  p{color:var(--ink-2)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .flow{display:flex;flex-direction:column;gap:8px}
+  .step{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:15px}
+  .step .n{flex:0 0 26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  .step.check{background:var(--amber-soft);border-color:#efd6b3}
+  .step.check .n{background:var(--amber)}
+  .step.record{background:var(--teal-soft);border-color:#c4e6dd}
+  .step small{display:block;color:var(--muted);font-size:13px}
+  .demo-btn{margin-top:14px;width:100%;background:var(--ink);color:#fff}
+  .note{font-size:12.5px;color:var(--muted);margin-top:8px}
+  .slide{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .slide .top{background:var(--ink);color:#fff;padding:14px 16px}
+  .slide .top .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+  .slide .top h3{font-size:18px;line-height:1.3;margin-top:4px}
+  .ba{display:grid;grid-template-columns:1fr 1fr}
+  .ba div{padding:14px 16px;font-size:14px;color:var(--ink-2)}
+  .ba div:first-child{border-right:1px solid var(--line)}
+  .ba b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  .ba .before b{color:var(--amber)}
+  .ba .after b{color:var(--teal)}
+  .ba ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .slide .foot{border-top:1px solid var(--line);padding:12px 16px;font-size:13px;color:var(--muted)}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .metric{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 14px}
+  .metric .v{font-size:28px;font-weight:800;color:var(--teal);line-height:1.1;letter-spacing:-.01em}
+  .metric .l{font-size:13.5px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+  .metric .s{font-size:11.5px;color:var(--muted);margin-top:6px}
+  .asks{display:flex;flex-direction:column;gap:10px}
+  .ask{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;gap:14px}
+  .ask .num{flex:0 0 34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .ask h3{font-size:16px;font-weight:700;margin-bottom:4px}
+  .ask p{font-size:14.5px}
+  .ask .who{font-size:12px;color:var(--teal);font-weight:600;margin-top:6px;text-transform:uppercase;letter-spacing:.06em}
+  .contact{background:var(--ink);color:#fff;border-radius:16px;padding:22px 18px;margin-top:28px}
+  .contact h2{color:#fff}
+  .contact p{color:rgba(255,255,255,.8)}
+  .contact .addr{font-family:"JetBrains Mono",monospace;font-size:14px;margin-top:10px;word-break:break-all}
+  .contact .btn{margin-top:14px;width:100%}
+  footer{text-align:center;font-size:12px;color:var(--muted);margin-top:22px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">BioCoder · EDP</div>
+    <h1>Agentic AI for molecular design, with a record built for cGMP and cGLP labs.</h1>
+    <p class="lede">EDP is an MCP-based AI agent that designs cloning and primer workflows and checks each step against validated tools. It also records why every decision was made, so tech transfer, change control and investigations start from evidence.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#asks">Our 3 asks</a>
+      <a class="btn btn-ghost" href="#contact">Talk to Kevin</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- DEMO -->
+  <section id="demo">
+    <div class="eyebrow">Demo</div>
+    <div class="card">
+      <div class="flow">
+        <div class="step"><div class="n">1</div><div>Sequence &amp; goal in<small>Insert, vector, cloning method</small></div></div>
+        <div class="step"><div class="n">2</div><div>Agent plans via MCP tools<small>RE, Gibson, Golden Gate, Gateway LR/BP</small></div></div>
+        <div class="step"><div class="n">3</div><div>Primers generated<small>Tm, dimers, reading frame, compatibility</small></div></div>
+        <div class="step check"><div class="n">!</div><div>Pre-flight conflict check<small>Errors flagged before anything is ordered or run</small></div></div>
+        <div class="step record"><div class="n">✓</div><div>Reasoning record saved<small>Auditable, replayable, ready for handoff</small></div></div>
+      </div>
+      <a class="btn demo-btn" href="#demo">▶ Watch the demo</a>
+      <p class="note">Demo video link coming soon.</p>
+    </div>
+  </section>
+
+  <!-- ONE-SLIDE USE CASE -->
+  <section>
+    <div class="eyebrow">Use case</div>
+    <div class="slide">
+      <div class="top"><div class="tag">cGMP · tech transfer</div><h3>A construct moves from R&amp;D to a CDMO for manufacturing</h3></div>
+      <div class="ba">
+        <div class="before"><b>Today</b><ul>
+          <li>The plasmid map is handed over, but the rationale isn't</li>
+          <li>The original designer has often moved on</li>
+          <li>Weeks go to clarification cycles and reverse-engineering</li>
+          <li>When a failure happens, the root cause is a guess</li>
+        </ul></div>
+        <div class="after"><b>With EDP</b><ul>
+          <li>Every site, primer and junction comes with its reason</li>
+          <li>The validation checks that ran are on record</li>
+          <li>Each change shows what changed and why</li>
+          <li>Investigations trace failures back through the design</li>
+        </ul></div>
+      </div>
+      <div class="foot">The same record supports cGLP study traceability: which construct version and checks each study arm used. EDP isn't a validated GxP system today. It produces the design record your QMS references.</div>
+    </div>
+  </section>
+
+  <!-- METRICS -->
+  <section>
+    <div class="eyebrow">Top metrics</div>
+    <div class="metrics">
+      <div class="metric"><div class="v">63%</div><div class="l">of cloning papers name no software for the design step</div><div class="s">Random sample of 60 from 252k OA papers, 2023–25 (95% CI 51–74%)</div></div>
+      <div class="metric"><div class="v">$28B</div><div class="l">a year spent on irreproducible preclinical research in the US</div><div class="s">Freedman et al., PLOS Biol 2015. Study design is 28% of it.</div></div>
+      <div class="metric"><div class="v">7 of 8</div><div class="l">platform domains live, including cloning, primers, CRISPR and RNA</div><div class="s">Pathway enrichment in progress</div></div>
+      <div class="metric"><div class="v">$100M+</div><div class="l">revenue from Vector NTI, which the founder led as product lead for 20 years</div><div class="s">Thermo Fisher / Life Technologies / Invitrogen</div></div>
+    </div>
+  </section>
+
+  <!-- ASKS -->
+  <section id="asks">
+    <div class="eyebrow">Our 3 asks</div>
+    <div class="asks">
+      <div class="ask"><div class="num">1</div><div>
+        <h3>$2M pre-seed, or intros to pre-seed VCs</h3>
+        <p>On a SAFE. It funds 18 months of build, design-partner validation and a first commercial hire.</p>
+        <div class="who">Life-science VCs · Angels</div>
+      </div></div>
+      <div class="ask"><div class="num">2</div><div>
+        <h3>Lab-in-kind or pilot space</h3>
+        <p>We need incubator or facility space to run EDP's MCP agent alongside a real cGMP/cGLP workflow.</p>
+        <div class="who">Incubators · Facility managers · Sponsors</div>
+      </div></div>
+      <div class="ask"><div class="num">3</div><div>
+        <h3>Pilot partners &amp; advisors</h3>
+        <p>We're looking for a team with a construct heading to tech transfer or a regulated study (6-week pilot), and advisors from active CDMOs or QA.</p>
+        <div class="who">Founders · Lab ops · Corp dev</div>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Let's talk</h2>
+    <p>Kevin Clancy, PhD · Founder &amp; CEO · BioCoder Consulting, Carlsbad, CA</p>
+    <div class="addr">kpclancy@hotmail.com</div>
+    <a class="btn btn-primary" href="mailto:kpclancy@hotmail.com?subject=BioCoder%20EDP%20%E2%80%94%20pitch%20follow-up">Email Kevin</a>
+  </section>
+
+  <footer>© 2026 BioCoder Consulting</footer>
+</div>
+</body>
+</html>
